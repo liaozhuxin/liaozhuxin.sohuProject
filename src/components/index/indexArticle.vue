@@ -499,7 +499,9 @@
 				this.appear = !this.appear
 			},
 			backTop(){
-				document.documentElement.scrollTop = 0;
+				document.documentElement.scrollTop=0
+				window.pageYOffset=0
+				document.body.scrollTop=0
 			}
 		},
 		mounted(){
@@ -519,15 +521,12 @@
 			
 			//回顶盒子的显示与隐藏
 			document.onscroll = function(){
-//				console.log(document.documentElement.scrollTop)
-				if(document.documentElement.scrollTop>300){
-					
+				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+				if(scrollTop>300){
 					_this.sideBar=true;
-					
 				}else{
 					_this.sideBar = false;
 				}
-//				console.log(_this.backtopsituat)
 			}
 	}
 }

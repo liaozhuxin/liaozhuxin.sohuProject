@@ -81,8 +81,8 @@ import metuPart from "./metuPart.vue"
 			 _this.oContainerBox = document.getElementsByClassName('containerBox')[0];
 			 //吸顶
 			document.onscroll = function(){
-				if(document.documentElement.scrollTop>44){
-//					console.log(_this.otabMenuBox);
+				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+				if(scrollTop>44){
 					_this.otabMenuBox.style.position = 'fixed';
 					_this.otabMenuBox.style.left='50%';
 					_this.otabMenuBox.style.transform='translateX(-50%)';
@@ -92,12 +92,13 @@ import metuPart from "./metuPart.vue"
 					_this.otabMenuBox.style.left='0%';
 					_this.otabMenuBox.style.transform='translateX(0%)';
 				}
-//				console.log(_this.backtopsituat)
 			}
 		},
 		methods:{
 			goTop(e){
-				document.documentElement.scrollTop = 44;
+				document.documentElement.scrollTop=44;
+				window.pageYOffset=44;
+				document.body.scrollTop=44;
 			},
 			changeOne(a){
 				this.sty = 're';

@@ -572,7 +572,7 @@
 			
 		<!--健康，母婴-->
 		<div class="importantNewsBox next" v-for="(item,index) in dubleTitle">
-				<div class="importantNewsHeader" :class="{ceilling:hName=='item.title'}">
+				<div class="importantNewsHeader" :class="{ceilling:hName==item.title}">
 					<h4>{{item.titleL}}</h4>
 					<span>＞</span>
 					<h4>{{item.titleR}}</h4>
@@ -665,7 +665,7 @@
 		</footer>
 		
 		<!--测试-->
-		<p style="position: fixed;top: 0;left: 0;width: 100%;height: 50px; background-color: lightgreen; z-index: 99999;">{{scrollTop1}}</p>
+		<!--<p style="position: fixed;top: 0;left: 0;width: 100%;height: 50px; background-color: lightgreen; z-index: 99999;">{{scrollTop1}}</p>-->
 		<!-------------回顶与下一屏---------------------->
 		<div class="backTopAslideDownBox" v-show="backtopsituat">
 			<div>
@@ -710,19 +710,13 @@
 			
 		},
 		mounted(){
-			//回顶盒子的显示与隐藏
-//			window.addEventListener("scroll");
-			 
+			
 			var _this = this;
 			var oNext = document.getElementsByClassName('next')
-//			console.log(oNext)
 			document.onscroll = function(){
 				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-				 _this.scrollTop1 = scrollTop;
-				 console.log(scrollTop);
-//				console.log(document.documentElement.scrollTop)
+				 //回顶盒子的显示与隐藏
 				if(scrollTop>300){
-					
 					_this.backtopsituat=true;
 					
 				}else{
@@ -734,7 +728,6 @@
 					headerfix.style.position = "fixed";
 					_this.hName = '';
 				}
-				
 				//每一个模块吸顶,下一模块的num改变
 				if(scrollTop > (oNext[0].offsetTop-44) && scrollTop < (oNext[1].offsetTop-44)){
 					console.log('first')
@@ -808,6 +801,22 @@
 					_this.hName = _this.fixClassNameList[14];
 					headerfix.style.position = "static";
 					_this.screenNum = 15;
+				}if(scrollTop > (oNext[15].offsetTop-44)&&scrollTop < (oNext[16].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[15];
+					headerfix.style.position = "static";
+					_this.screenNum = 16;
+				}if(scrollTop > (oNext[16].offsetTop-44)&&scrollTop < (oNext[17].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[16];
+					headerfix.style.position = "static";
+					_this.screenNum = 17;
+				}if(scrollTop > (oNext[17].offsetTop-44)&&scrollTop < (oNext[18].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[17];
+					headerfix.style.position = "static";
+					_this.screenNum = 18;
+				}if(scrollTop > (oNext[18].offsetTop-44)&&scrollTop < (oNext[19].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[18];
+					headerfix.style.position = "static";
+					_this.screenNum = 0;
 				}
 			}
 			//AJAX传数据
@@ -827,8 +836,6 @@
 				this.novel = res.data.newslist[11].novel;
 				this.dubleTitle = res.data.newslist[12].dubleTitle;
 				this.house = res.data.newslist[13].house;
-//				this.contain = this.dubleTitle.contain;
-//				console.log(res.data.newslist[12].dubleTitle[]);
 			})
 			.catch(()=>{})
 			.finally((f)=>{
@@ -872,20 +879,16 @@
 				el.style.transition='all 0s';
 			},
 			backTop(){
-//				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
 				document.documentElement.scrollTop=0
 				window.pageYOffset=0
-				 document.body.scrollTop=0
-				
-//				scrollTop = 0;
+				document.body.scrollTop=0
 				this.screenNum = 0;
 			},
 			nextScree(){
-				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
 				if(this.screenNum > 18){
 					this.screenNum = 0;
 				}
-				scrollTop = document.getElementsByClassName('next')[this.screenNum].offsetTop-22;
+				document.documentElement.scrollTop = document.body.scrollTop = document.getElementsByClassName('next')[this.screenNum].offsetTop-14;
 				this.screenNum++;
 			}
 		}
