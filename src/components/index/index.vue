@@ -218,6 +218,7 @@
 							<ul>
 								<li>上证指数<span>2933.36&nbsp;-77.70</span></li>
 								<li>深证成指<span>9186.29&nbsp;-256.92</span></li>
+								<li>上证指数<span>2933.36&nbsp;-77.70</span></li>
 							</ul>
 						</div>
 						<p>行情中心</p>
@@ -705,7 +706,8 @@
 				hName:'',
 				fixClassNameList:['im','entertain','pe','finance','car','house','miliary','science','special','history','culture','fashion','educa','novel','baby','travel','constellation','cartoon','video'],
 				nextScreeBox:true,
-				scrollTop1:0
+				scrollTop1:0,
+				textSwipeNum:0
 			}
 			
 		},
@@ -841,6 +843,24 @@
 			.finally((f)=>{
 				console.log('请求结束')
 			})
+			//财经新闻无缝滚动
+			var oTextSwipe = document.getElementsByClassName('textSwipe')[0].childNodes[0];
+			setInterval(function(){
+				_this.textSwipeNum++;
+					if(_this.textSwipeNum > 2){
+						_this.textSwipeNum = 0;
+						oTextSwipe.style.transition = 'all 0s'
+						oTextSwipe.style.top = -21*_this.textSwipeNum+'px';
+						
+					}
+					else{
+						
+						oTextSwipe.style.top = '-'+_this.textSwipeNum*21+'px';
+						oTextSwipe.style.transition = 'all 1s'
+					}
+//					_this.textSwipeNum = 1
+
+				},2000)
 		},
 		methods:{
 			handleChange(index){
@@ -897,6 +917,16 @@
 </script>
 
 <style scoped>
+	/*********财经字体轮播************/
+	.textSwipe{
+		position: relative;
+	}
+	.textSwipe>ul{
+		position: absolute;
+		top: 0;
+		left: 0;
+		/*transition: all 1s;*/
+	}
 	/***每一个标题吸顶****/
 	.ceilling{
 		max-width: 780px;
@@ -1480,7 +1510,6 @@
 		overflow: hidden;
 	}
 	.textSwipe>ul{
-		float: left;
 		width: 100%;
 		margin-top:2px;
 	}
