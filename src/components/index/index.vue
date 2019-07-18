@@ -1,6 +1,9 @@
 
 <template>
 	<main>
+		<div id="bigAdBox">
+			<adBox></adBox>
+		</div>
 		<header class="header" id="headerfix">
 			<h1>
 				<img src="../../assets/indexPic/sohuLogo.png" height="30px"/>
@@ -681,6 +684,7 @@
 	</main>
 </template>
 <script>
+	import adBox from "./adBox.vue"
 	export default({
 		data(){
 			return{
@@ -710,6 +714,9 @@
 				textSwipeNum:0
 			}
 			
+		},
+		components:{
+			'adBox':adBox
 		},
 		mounted(){
 			
@@ -917,6 +924,17 @@
 </script>
 
 <style scoped>
+	/*********进入页面时的广告盒子***************/
+	#bigAdBox{
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		background-color: rgba(0,0,0,.3);
+	}
+	
 	/*********财经字体轮播************/
 	.textSwipe{
 		position: relative;
