@@ -39,9 +39,13 @@
 				<li  class="show">
 					<show></show>
 				</li>
-				<li class="metu">
-					<metu></metu>
-				</li>
+
+					<li class="metu">
+						<transition enter-active-class="animated zoomIn"  >
+							<metu v-show="sscale" style="animation-duration: .4s"></metu>
+						</transition>
+					</li>
+
 			</ul>
 	</main>
 </template>
@@ -59,7 +63,8 @@ import metuPart from "./metuPart.vue"
 				p:[],
 				sty:'re',
 				oContainerBox:'',
-				otabMenuBox:''
+				otabMenuBox:'',
+				sscale:false
 			}
 		},
 		components:{
@@ -79,9 +84,13 @@ import metuPart from "./metuPart.vue"
 				if(document.documentElement.scrollTop>44){
 //					console.log(_this.otabMenuBox);
 					_this.otabMenuBox.style.position = 'fixed';
+					_this.otabMenuBox.style.left='50%';
+					_this.otabMenuBox.style.transform='translateX(-50%)';
 					
 				}else{
 					_this.otabMenuBox.style.position = '';
+					_this.otabMenuBox.style.left='0%';
+					_this.otabMenuBox.style.transform='translateX(0%)';
 				}
 //				console.log(_this.backtopsituat)
 			}
@@ -93,26 +102,32 @@ import metuPart from "./metuPart.vue"
 			changeOne(a){
 				this.sty = 're';
 				this.oContainerBox.style.left='0vw';
+				this.sscale  = false;
 			},
 			changeTwo(a){
 				this.sty = 'st'
-				this.oContainerBox.style.left='-100vw';
+				this.oContainerBox.style.left='-100%';
+				this.sscale  = false;
 			},
 			changeThree(a){
 				this.sty = 'tv'
-				this.oContainerBox.style.left='-200vw';
+				this.oContainerBox.style.left='-200%';
+				this.sscale  = false;
 			},
 			changeFour(a){
 				this.sty = 'mo'
-				this.oContainerBox.style.left='-300vw';
+				this.oContainerBox.style.left='-300%';
+				this.sscale  = false;
 			},
 			changeFive(a){
 				this.sty = 'sh'
-				this.oContainerBox.style.left='-400vw';
+				this.oContainerBox.style.left='-400%';
+				this.sscale  = false;
 			},
 			changeSix(a){
 				this.sty = 'me'
-				this.oContainerBox.style.left='-500vw';
+				this.oContainerBox.style.left='-500%';
+				this.sscale  = true;
 			
 		}
 	}
@@ -190,11 +205,9 @@ import metuPart from "./metuPart.vue"
 		overflow: hidden;
 		border-bottom: 1px solid #e8e8e8 ;
 		top: 0;
-		left: 0;
 		z-index: 99;
 		background-color: white;
 		max-width: 780px;
-		transition: all .2s;
 	}
 	.tabMenuBox>li{
 		float: left;
@@ -205,6 +218,7 @@ import metuPart from "./metuPart.vue"
 		padding-top: 10px;
 		padding-bottom: 10px;
 		border-bottom: 4px solid white;
+		transition: all .3s;
 	}
 	.tabMenuBox>li.sty{
 		color: #F0A400;

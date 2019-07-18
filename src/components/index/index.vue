@@ -1,7 +1,7 @@
 
 <template>
 	<main>
-		<header class="header">
+		<header class="header" id="headerfix">
 			<h1>
 				<img src="../../assets/indexPic/sohuLogo.png" height="30px"/>
 			</h1>
@@ -97,8 +97,8 @@
 		<div class="gapBox"></div>
 		<section class="allNewsBox">
 			<!--热点新闻-->
-			<div class="importantNewsBox">
-				<div class="importantNewsHeader">
+			<div class="importantNewsBox next">
+				<div class="importantNewsHeader" :class="{ceilling:hName=='im'}">
 					<h4>要闻</h4>
 					<span>＞</span>
 					<ul>
@@ -123,8 +123,8 @@
 		<p class="advertisementContain">福特公司的成功之道，来学习！<span class="advertisementbox">广告</span></p>
 		<div class="gapBox"></div>
 		<!--娱乐新闻-->
-		<div class="entertainmentNewsBox ">
-				<div class="entertainmentNewsHeader">
+		<div class="entertainmentNewsBox next">
+				<div class="entertainmentNewsHeader" :class="{ceilling:hName=='entertain'}">
 					<h4>娱乐</h4>
 					<span>＞</span>
 					<ul>
@@ -163,8 +163,8 @@
 			<div class="gapBox"></div>
 			
 			<!--体育新闻-->
-			<div class="PENewsBox ">
-				<div class="PENewsHeader">
+			<div class="PENewsBox next">
+				<div class="PENewsHeader" :class="{ceilling:hName=='pe'}">
 					<h4>体育</h4>
 					<span>＞</span>
 					<ul>
@@ -202,8 +202,8 @@
 			<div class="gapBox"></div>
 			
 			<!--财经新闻-->
-			<div class="financeNewsBox">
-				<div class="financeNewsHeader">
+			<div class="financeNewsBox next">
+				<div class="financeNewsHeader" :class="{ceilling:hName=='finance'}">
 					<h4>财经</h4>
 					<span>＞</span>
 					<ul>
@@ -240,8 +240,8 @@
 			<div class="gapBox"></div>
 		
 		<!--汽车类新闻-->	
-		<div class="carNewsBox ">
-				<div class="carNewsHeader">
+		<div class="carNewsBox next">
+				<div class="carNewsHeader" :class="{ceilling:hName=='car'}">
 					<h4>汽车</h4>
 					<span>＞</span>
 					<ul>
@@ -271,8 +271,8 @@
 			<p class="advertisementContain">拉布拉多多少钱？免费咨询价格实惠<span class="advertisementbox">广告</span></p>
 			<div class="gapBox"></div>
 		<!--房产新闻-->
-		<div class="houseNewsBox ">
-				<div class="houseNewsHeader">
+		<div class="houseNewsBox next">
+				<div class="houseNewsHeader" :class="{ceilling:hName=='house'}">
 					<h4>房产</h4>
 					<span>＞</span>
 					<ul>
@@ -302,8 +302,8 @@
 			<p class="advertisementContain">拉布拉多多少钱？免费咨询价格实惠<span class="advertisementbox">广告</span></p>
 			<div class="gapBox"></div>
 		<!--军事新闻-->
-		<div class="militaryNewsBox ">
-				<div class="militaryNewsHeader">
+		<div class="militaryNewsBox next">
+				<div class="militaryNewsHeader" :class="{ceilling:hName=='miliary'}">
 					<h4>军事</h4>
 					<span>＞</span>
 					<ul>
@@ -355,8 +355,8 @@
 			<div class="gapBox"></div>
 		
 		<!--科技-->
-		<div class="militaryNewsBox ">
-				<div class="militaryNewsHeader">
+		<div class="militaryNewsBox next">
+				<div class="militaryNewsHeader" :class="{ceilling:hName=='science'}">
 					<h4>科技</h4>
 					<span>＞</span>
 					<ul>
@@ -386,8 +386,8 @@
 			<p class="advertisementContain">拉布拉多多少钱？免费咨询价格实惠<span class="advertisementbox">广告</span></p>
 			<div class="gapBox"></div>
 		<!--专题-->
-		<div class="importantNewsBox">
-				<div class="importantNewsHeader">
+		<div class="importantNewsBox next">
+				<div class="importantNewsHeader" :class="{ceilling:hName=='special'}">
 					<h4>专题</h4>
 					<span>＞</span>
 				</div>
@@ -402,8 +402,8 @@
 		<div class="gapBox"></div>
 		
 		<!--历史-->
-		<div class="militaryNewsBox ">
-				<div class="militaryNewsHeader">
+		<div class="militaryNewsBox next">
+				<div class="militaryNewsHeader" :class="{ceilling:hName=='history'}">
 					<h4>历史</h4>
 					<span>＞</span>
 					<ul>
@@ -443,8 +443,8 @@
 			</div>
 			<div class="gapBox"></div>
 		<!--文化-->
-		<div class="militaryNewsBox ">
-				<div class="militaryNewsHeader">
+		<div class="militaryNewsBox next">
+				<div class="militaryNewsHeader" :class="{ceilling:hName=='culture'}">
 					<h4>文化</h4>
 					<span>＞</span>
 					<ul>
@@ -481,8 +481,8 @@
 			<div class="gapBox"></div>
 			
 			<!--时尚-->
-		<div class="militaryNewsBox ">
-				<div class="militaryNewsHeader">
+		<div class="militaryNewsBox next">
+				<div class="militaryNewsHeader" :class="{ceilling:hName=='fashion'}">
 					<h4>时尚</h4>
 					<span>＞</span>
 					<ul>
@@ -517,8 +517,8 @@
 			<div class="gapBox"></div>
 		
 		<!--教育-->
-		<div class="importantNewsBox">
-				<div class="importantNewsHeader">
+		<div class="importantNewsBox next">
+				<div class="importantNewsHeader" :class="{ceilling:hName=='educa'}">
 					<h4>教育</h4>
 					<span>＞</span>
 					<ul>
@@ -536,8 +536,8 @@
 		<div class="gapBox"></div>
 		
 		<!--小说-->
-		<div class="novelNewsBox ">
-				<div class="novelNewsHeader">
+		<div class="novelNewsBox next">
+				<div class="novelNewsHeader" :class="{ceilling:hName=='novel'}">
 					<h4>小说</h4>
 					<span>＞</span>
 					<ul>
@@ -571,8 +571,8 @@
 			<div class="gapBox"></div>
 			
 		<!--健康，母婴-->
-		<div class="importantNewsBox" v-for="(item,index) in dubleTitle">
-				<div class="importantNewsHeader">
+		<div class="importantNewsBox next" v-for="(item,index) in dubleTitle">
+				<div class="importantNewsHeader" :class="{ceilling:hName=='item.title'}">
 					<h4>{{item.titleL}}</h4>
 					<span>＞</span>
 					<h4>{{item.titleR}}</h4>
@@ -588,9 +588,8 @@
 		<div class="gapBox"></div>
 		<p class="advertisementContain">福特公司的成功之道，来学习！<span class="advertisementbox">广告</span></p>
 		<div class="gapBox"></div>
-		
 			<!--生活服务-->
-			<div class="lifeServiceBox ">
+			<div class="lifeServiceBox next">
 				<div class="lifeServiceHeader">
 					<h4>生活服务</h4>
 				</div>
@@ -665,17 +664,19 @@
 			<p class="footerText">搜狐公司 版权所有</p>
 		</footer>
 		
-		
-		
+		<!--测试-->
+		<p style="position: fixed;top: 0;left: 0;width: 100%;height: 50px; background-color: lightgreen; z-index: 99999;">{{scrollTop1}}</p>
 		<!-------------回顶与下一屏---------------------->
 		<div class="backTopAslideDownBox" v-show="backtopsituat">
 			<div>
 				<span class="backTop" @click="backTop()"></span>
 			</div>
-			<div>
+			<div v-show="nextScreeBox">
 				<span class="slideDown" @click="nextScree()"></span>
 			</div>
 		</div>
+		<!--------------------每一部分的吸顶效果------------------------------->
+		<!--<p class=""></p>-->
 	</main>
 </template>
 <script>
@@ -700,9 +701,139 @@
 				novel:[],
 				dubleTitle:[],
 				house:[],
-				contain:[]
+				contain:[],
+				hName:'',
+				fixClassNameList:['im','entertain','pe','finance','car','house','miliary','science','special','history','culture','fashion','educa','novel','baby','travel','constellation','cartoon','video'],
+				nextScreeBox:true,
+				scrollTop1:0
 			}
 			
+		},
+		mounted(){
+			//回顶盒子的显示与隐藏
+//			window.addEventListener("scroll");
+			 
+			var _this = this;
+			var oNext = document.getElementsByClassName('next')
+//			console.log(oNext)
+			document.onscroll = function(){
+				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+				 _this.scrollTop1 = scrollTop;
+				 console.log(scrollTop);
+//				console.log(document.documentElement.scrollTop)
+				if(scrollTop>300){
+					
+					_this.backtopsituat=true;
+					
+				}else{
+					_this.backtopsituat = false;
+				}
+				
+			//比第一模块小，比第14个模块大 让头部重新吸顶
+				if(scrollTop < (oNext[0].offsetTop-44) || scrollTop > (oNext[19].offsetTop-44)){
+					headerfix.style.position = "fixed";
+					_this.hName = '';
+				}
+				
+				//每一个模块吸顶,下一模块的num改变
+				if(scrollTop > (oNext[0].offsetTop-44) && scrollTop < (oNext[1].offsetTop-44)){
+					console.log('first')
+					_this.hName =  _this.fixClassNameList[0];
+					_this.screenNum = 1;
+					headerfix.style.position = "static";
+				}
+				if(scrollTop > (oNext[1].offsetTop-44)&&scrollTop < (oNext[2].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[1];
+					_this.screenNum = 2;
+					headerfix.style.position = "static";
+				}
+				if(scrollTop > (oNext[2].offsetTop-44)&&scrollTop < (oNext[3].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[2];
+					_this.screenNum = 3;
+					headerfix.style.position = "static";
+				}
+				if(scrollTop > (oNext[3].offsetTop-44)&&scrollTop < (oNext[4].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[3];
+					_this.screenNum = 4;
+					headerfix.style.position = "static";
+				}
+				if(scrollTop > (oNext[4].offsetTop-44)&&scrollTop < (oNext[5].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[4];
+					_this.screenNum = 5;
+					headerfix.style.position = "static";
+				}
+				if(scrollTop > (oNext[5].offsetTop-44)&&scrollTop < (oNext[6].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[5];
+					_this.screenNum = 6;
+					headerfix.style.position = "static";
+				}
+				if(scrollTop > (oNext[6].offsetTop-44)&&scrollTop < (oNext[7].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[6];
+					_this.screenNum = 7;
+					headerfix.style.position = "static";
+					
+				}if(scrollTop > (oNext[7].offsetTop-44)&&scrollTop < (oNext[8].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[7];
+					_this.screenNum = 8;
+					headerfix.style.position = "static";
+					
+				}if(scrollTop > (oNext[8].offsetTop-44)&&scrollTop < (oNext[9].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[8];
+					_this.screenNum = 9;
+					headerfix.style.position = "static";
+					
+				}if(scrollTop > (oNext[9].offsetTop-44)&&scrollTop < (oNext[10].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[9];
+					_this.screenNum = 10;
+					headerfix.style.position = "static";
+					
+				}if(scrollTop > (oNext[10].offsetTop-44)&&scrollTop < (oNext[11].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[10];
+					_this.screenNum = 11;
+					headerfix.style.position = "static";
+					
+				}if(scrollTop > (oNext[11].offsetTop-44)&&scrollTop < (oNext[12].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[11];
+					headerfix.style.position = "static";
+					_this.screenNum = 12;
+				}if(scrollTop > (oNext[12].offsetTop-44)&&scrollTop < (oNext[13].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[12];
+					headerfix.style.position = "static";
+					_this.screenNum = 13;
+				}if(scrollTop > (oNext[13].offsetTop-44)&&scrollTop < (oNext[14].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[13];
+					headerfix.style.position = "static";
+					_this.screenNum = 14;
+				}if(scrollTop > (oNext[14].offsetTop-44)&&scrollTop < (oNext[15].offsetTop-44)){
+					_this.hName = _this.fixClassNameList[14];
+					headerfix.style.position = "static";
+					_this.screenNum = 15;
+				}
+			}
+			//AJAX传数据
+			this.$http.get('./data/data.json')
+			.then((res)=>{
+				this.indexImportNews = res.data.newslist[0].indexImportNews;
+				this.entertainmentNews = res.data.newslist[1].entertainmentNews;
+				this.PENews = res.data.newslist[2].PENews;
+				this.financeNews = res.data.newslist[3].financeNews;
+				this.carNews = res.data.newslist[4].carNews;
+				this.militaryNews = res.data.newslist[5].militaryNews;
+				this.scienceNews = res.data.newslist[6].scienceNews;
+				this.specialTopic = res.data.newslist[7].specialTopic;
+				this.culture = res.data.newslist[8].culture;
+				this.fashion = res.data.newslist[9].fashion;
+				this.education = res.data.newslist[10].education;
+				this.novel = res.data.newslist[11].novel;
+				this.dubleTitle = res.data.newslist[12].dubleTitle;
+				this.house = res.data.newslist[13].house;
+//				this.contain = this.dubleTitle.contain;
+//				console.log(res.data.newslist[12].dubleTitle[]);
+			})
+			.catch(()=>{})
+			.finally((f)=>{
+				console.log('请求结束')
+			})
 		},
 		methods:{
 			handleChange(index){
@@ -741,62 +872,42 @@
 				el.style.transition='all 0s';
 			},
 			backTop(){
-				document.documentElement.scrollTop = 0;
+//				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+				document.documentElement.scrollTop=0
+				window.pageYOffset=0
+				 document.body.scrollTop=0
+				
+//				scrollTop = 0;
+				this.screenNum = 0;
 			},
 			nextScree(){
-				this.screenNum++;
-//				if (this.screenNum>19) {
-//					
-//				} else{
-//					
-//				}
-				
-			}
-		},
-		mounted(){
-			//回顶盒子的显示与隐藏
-			var _this = this;
-			document.onscroll = function(){
-//				console.log(document.documentElement.scrollTop)
-				if(document.documentElement.scrollTop>300){
-					
-					_this.backtopsituat=true;
-					
-				}else{
-					_this.backtopsituat = false;
+				var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+				if(this.screenNum > 18){
+					this.screenNum = 0;
 				}
-//				console.log(_this.backtopsituat)
+				scrollTop = document.getElementsByClassName('next')[this.screenNum].offsetTop-22;
+				this.screenNum++;
 			}
-			//AJAX传数据
-			this.$http.get('./data/data.json')
-			.then((res)=>{
-				this.indexImportNews = res.data.newslist[0].indexImportNews;
-				this.entertainmentNews = res.data.newslist[1].entertainmentNews;
-				this.PENews = res.data.newslist[2].PENews;
-				this.financeNews = res.data.newslist[3].financeNews;
-				this.carNews = res.data.newslist[4].carNews;
-				this.militaryNews = res.data.newslist[5].militaryNews;
-				this.scienceNews = res.data.newslist[6].scienceNews;
-				this.specialTopic = res.data.newslist[7].specialTopic;
-				this.culture = res.data.newslist[8].culture;
-				this.fashion = res.data.newslist[9].fashion;
-				this.education = res.data.newslist[10].education;
-				this.novel = res.data.newslist[11].novel;
-				this.dubleTitle = res.data.newslist[12].dubleTitle;
-				this.house = res.data.newslist[13].house;
-//				this.contain = this.dubleTitle.contain;
-//				console.log(res.data.newslist[12].dubleTitle[]);
-			})
-			.catch(()=>{})
-			.finally((f)=>{
-				console.log('请求结束')
-			})
 		}
 		
 	})
 </script>
 
 <style scoped>
+	/***每一个标题吸顶****/
+	.ceilling{
+		max-width: 780px;
+		position: fixed;
+		top: 0;
+		left: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 999;
+		background-color: white;
+	}
+	
+	
+	/*********/
 	html,body{
 		max-width: 780px;
 		overflow-x: hidden;
@@ -815,7 +926,6 @@
 	.header{
 		position: fixed;
 		top: 0;
-		left: 0;
 		width: 100%;
 		padding-bottom: 10px;
 		padding-left: 3%;
@@ -823,6 +933,9 @@
 		z-index: 11;
 		overflow: hidden;
 		box-sizing: border-box;
+		max-width: 780px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	.header h1{
 		float: left;
@@ -1388,14 +1501,16 @@
 		overflow: hidden;
 		margin-bottom: 20px;
 		margin-top: 15px;
+		box-sizing: border-box;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.financeSearchBox>input{
 		border: none;
-		width:54%;
+		width:50%;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 18px;
-		margin-left: 15px;
 		color: #A4A4A4;
 	}
 	.financeSearchBtn{
@@ -1412,7 +1527,7 @@
 	.MyfinanceSearch{
 		display: inline-block;
 		text-align: center;
-		width: 17.3%;
+		width: calc(100% - 67.3% - 42px);
 		padding-top: 10px;
 		padding-bottom: 9px;
 		background-color: white;
